@@ -1,22 +1,14 @@
 // two messages can be emited by the client
 //
-// move: Moves
-// shot: 0-360 which resembles the direction in which the player shoots
+// m move: W: 00, A: 01, S: 10, D: 11
+// s shot: 0-360 which resembles the direction in which the player shoots
 
 // the server emits the world state to the cliets
 
 // the intervall should be 60 times a second
 
-enum Moves {
-  W,
-  S,
-  A,
-  D,
-  WA,
-  WD,
-  SA,
-  SD
-}
+use std::thread;
+use std::net;
 
 struct Position {
     x: i32,
